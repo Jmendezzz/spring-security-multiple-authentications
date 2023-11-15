@@ -1,6 +1,5 @@
 package com.example.multiple_authentications.config.authentication;
 
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -10,6 +9,11 @@ import java.util.Collection;
 @RequiredArgsConstructor
 public class ApiKeyAuthentication implements Authentication {
   private final String apiKey;
+
+  public String getApiKey() {
+    return apiKey;
+  }
+
   private boolean isAuthenticated;
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
